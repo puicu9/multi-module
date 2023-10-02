@@ -5,12 +5,17 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
-		<groupId>yeonghun</groupId>
-		<artifactId>multi-module</artifactId>
-		<version>0.0.1-SNAPSHOT</version>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>3.1.4</version>
+		<relativePath />
 	</parent>
-	<artifactId>api</artifactId>
+
 	<name>api</name>
+	<packaging>jar</packaging>
+	<groupId>yeonghun</groupId>
+	<artifactId>api</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
 
 	<properties>
 		<java.version>17</java.version>
@@ -39,16 +44,32 @@
 		</dependency>
 
 		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
 			<groupId>yeonghun</groupId>
 			<artifactId>core</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-			<type>jar</type>
+			<version>${project.version}</version>
 		</dependency>
 
 
 	</dependencies>
 
+
 	<build>
+		<finalName>api-${project.version}</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+	
+	<!--<build>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
@@ -77,6 +98,6 @@
 				</executions>
 			</plugin>
 		</plugins>
-	</build>
+	</build>-->
 
 </project>

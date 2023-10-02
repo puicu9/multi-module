@@ -5,11 +5,17 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
-		<groupId>yeonghun</groupId>
-		<artifactId>multi-module</artifactId>
-		<version>0.0.1-SNAPSHOT</version>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>3.1.4</version>
+		<relativePath />
 	</parent>
+	
+	<name>batch</name>
+	<packaging>jar</packaging>
+	<groupId>yeonghun</groupId>
 	<artifactId>batch</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
 
 	<properties>
 		<java.version>17</java.version>
