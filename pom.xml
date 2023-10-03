@@ -4,9 +4,16 @@
 	<modelVersion>4.0.0</modelVersion>
 	<name>multi-module</name>
 	<packaging>pom</packaging>
-	<groupId>yeonghun</groupId>
+	<groupId>com.yeonghun</groupId>
 	<artifactId>multi-module</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>3.1.4</version>
+		<relativePath />
+	</parent>
 
 	<modules>
 		<module>core</module>

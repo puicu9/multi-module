@@ -1,4 +1,4 @@
-package core;
+package com.yeonghun.core;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
