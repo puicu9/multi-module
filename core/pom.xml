@@ -63,7 +63,7 @@
 		</dependency>
 
 	</dependencies>
-
+	
 	<build>
 		<plugins>
 			<plugin>
@@ -72,6 +72,29 @@
 				<configuration>
 					<skip>true</skip><!-- skip 을 true로 함으로써 test를 건너뛰게 하여 build 가능하게 됨.test를 거치도록 하는건 안 좋은 방안이니, 추후 알아볼 것 -->
 				</configuration>
+			</plugin>
+			<!-- This plugin is used to create a docker image and publish the image to docker hub-->
+			<plugin>
+				<groupId>com.spotify</groupId>
+				<artifactId>dockerfile-maven-plugin</artifactId>
+				<version>1.4.13</version>
+				<configuration>
+					<repository>${docker.image.prefix}/${project.artifactId}</repository>
+	                <tag>${project.version}</tag>
+					<buildArgs>
+						<JAR_FILE>target/${project.build.finalName}.jar</JAR_FILE>
+					</buildArgs>
+				</configuration>
+				<executions>
+					<execution>
+						<id>default</id>
+						<phase>install</phase>
+						<goals>
+							<goal>build</goal>
+							<goal>push</goal>
+						</goals>
+					</execution>
+				</executions>
 			</plugin>
 		</plugins>
 	</build>
